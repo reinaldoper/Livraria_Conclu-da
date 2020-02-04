@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Delete_Author</title>
+</head>
+<body>
+ {% extends "base_generic.html" %}
+    {% block content %}
+        <div class="page_header">
+        <h2>Excluir</h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+        <h2> Você quer remover o autor:"{{author.last_name}}" ?</h2>
+        <button type="submit" class="btn btn-danger">
+            Excluir
+        </button>
+            <a class="btn btn-primary" href="{% url 'author-list' %}">Cancelar</a>
+        </form>
+    {% endblock %}
+</body>
+</html>

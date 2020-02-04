@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca</title>
+</head>
+<body>
+ {% extends "base_generic.html"%}
+
+{% block content%}
+  <h1> Página inicial da biblioteca <em>MyBooks</em></h1>
+  <p> Bem-vindo a sua Livraria, um site desenvolvido pela <em> ConsulNet </em>! </p>
+  <h2> Conteúdo dinâmico </h2>
+  <p> A biblioteca possui os seguintes registros: </p>
+  <ul>
+    <li> <strong> Livros: </strong> {{num_books}} </li>
+    <li> <strong> Cópias: </strong> {{num_instances}} </li>
+    <li> <strong> Cópias disponíveis: </strong> {{num_instances_available}} </li>
+    <li> <strong> Autores : </strong>{{num_authors}} </li>
+    <li> <strong> Gênero : </strong>{{num_generes}}</li>
+  </ul>
+    <p>Você visitou está página {{ num_visits }}{% if num_visits == 1 %} vez.{% else %} vezes.{% endif %}.</p>
+{% endblock%}
+</body>
+</html>
